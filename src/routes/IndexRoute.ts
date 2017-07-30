@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 
 /**
  * Index route class
@@ -24,16 +24,21 @@ export class IndexRoute {
                 query: req.query,  // query string passed in from URL
                 workerPID: process.pid
             });
-        }).get(this.route, (req: Request, res: Response) => {
+        }).get(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).post(this.route, (req: Request, res: Response) => {
+            next();
+        }).post(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).put(this.route, (req: Request, res: Response) => {
+            next();
+        }).put(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).patch(this.route, (req: Request, res: Response) => {
+            next();
+        }).patch(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).delete(this.route, (req: Request, res: Response) => {
+            next();
+        }).delete(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
+            next();
         });
     }
 

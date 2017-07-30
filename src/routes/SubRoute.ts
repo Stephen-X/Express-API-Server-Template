@@ -15,7 +15,7 @@ export class SubRoute {
      * @param router the main router object
      */
     public static addTo(router: Router): void {
-        router.all(this.route, (req: Request, res: Response, next: NextFunction) => {
+        router.all(this.route, (req: Request, res: Response) => {
             res.json({
                 name: 'Stephen Tse',
                 email: 'Stephen.Xie@sa.gov.au',
@@ -24,17 +24,21 @@ export class SubRoute {
                 query: req.query,  // query string passed in from URL
                 workerPID: process.pid
             });
+        }).get(this.route, (req: Request, res: Response, next: NextFunction) => {
+            // todo
             next();
-        }).get(this.route, (req: Request, res: Response) => {
+        }).post(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).post(this.route, (req: Request, res: Response) => {
+            next();
+        }).put(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).put(this.route, (req: Request, res: Response) => {
+            next();
+        }).patch(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).patch(this.route, (req: Request, res: Response) => {
+            next();
+        }).delete(this.route, (req: Request, res: Response, next: NextFunction) => {
             // todo
-        }).delete(this.route, (req: Request, res: Response) => {
-            // todo
+            next();
         });
     }
 

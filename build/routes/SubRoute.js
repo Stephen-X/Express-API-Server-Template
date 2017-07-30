@@ -14,7 +14,7 @@ var SubRoute = (function () {
      * @param router the main router object
      */
     SubRoute.addTo = function (router) {
-        router.all(this.route, function (req, res, next) {
+        router.all(this.route, function (req, res) {
             res.json({
                 name: 'Stephen Tse',
                 email: 'Stephen.Xie@sa.gov.au',
@@ -23,17 +23,21 @@ var SubRoute = (function () {
                 query: req.query,
                 workerPID: process.pid
             });
+        }).get(this.route, function (req, res, next) {
+            // todo
             next();
-        }).get(this.route, function (req, res) {
+        }).post(this.route, function (req, res, next) {
             // todo
-        }).post(this.route, function (req, res) {
+            next();
+        }).put(this.route, function (req, res, next) {
             // todo
-        }).put(this.route, function (req, res) {
+            next();
+        }).patch(this.route, function (req, res, next) {
             // todo
-        }).patch(this.route, function (req, res) {
+            next();
+        }).delete(this.route, function (req, res, next) {
             // todo
-        }).delete(this.route, function (req, res) {
-            // todo
+            next();
         });
     };
     SubRoute.route = '/sub';

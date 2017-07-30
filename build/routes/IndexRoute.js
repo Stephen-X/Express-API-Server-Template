@@ -23,16 +23,21 @@ var IndexRoute = (function () {
                 query: req.query,
                 workerPID: process.pid
             });
-        }).get(this.route, function (req, res) {
+        }).get(this.route, function (req, res, next) {
             // todo
-        }).post(this.route, function (req, res) {
+            next();
+        }).post(this.route, function (req, res, next) {
             // todo
-        }).put(this.route, function (req, res) {
+            next();
+        }).put(this.route, function (req, res, next) {
             // todo
-        }).patch(this.route, function (req, res) {
+            next();
+        }).patch(this.route, function (req, res, next) {
             // todo
-        }).delete(this.route, function (req, res) {
+            next();
+        }).delete(this.route, function (req, res, next) {
             // todo
+            next();
         });
     };
     IndexRoute.route = '/';
