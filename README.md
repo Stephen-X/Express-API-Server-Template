@@ -51,6 +51,6 @@ AWS Lambda functions run as [containers](https://en.wikipedia.org/wiki/Operating
 
 For some reason Lambda won't recognize archives zipped by WinZip (at least on Windows); I have to use the `zip` command tool on Unix systems.
 
-* On macOS / Linux: `cd` to the directory to be zipped, then do `zip -r -9 [file_name].zip *`.
+* On macOS / Linux: `cd` to the `/build` directory, then do `zip -r -9 [file_name].zip *`.
 
 * On Windows: follow the instructions provided in the *How to generate new certificates for testing?* section to install `MSYS2` first, install the `zip` package by `pacman -S zip`, then run the same command as you would on macOS / Linux.
